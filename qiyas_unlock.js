@@ -13,7 +13,7 @@ window.QIYAS_UNLOCK = function(code){
   }
 
   // 2) التحقق من السيرفر — ربط المفتاح بالجهاز (يمنع النسخ لجهاز ثاني)
-  var ACTIVATE_URL = 'http://95.217.162.116:8877/activate';
+  var ACTIVATE_URL = 'https://fazza-adel.duckdns.org/activate/';
   var xhr = new XMLHttpRequest();
   xhr.open('POST', ACTIVATE_URL, false); // sync — ننتظر نتيجة الربط
   xhr.setRequestHeader('Content-Type', 'application/json');
