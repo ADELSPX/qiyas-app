@@ -66,7 +66,8 @@
   /* الكود مشفر في qiyas_unlock.js */
   function check(){
     var v = document.getElementById('unlockInput').value;
-    var bank = window.QIYAS_UNLOCK(v);
+    var result = window.QIYAS_UNLOCK(v);
+    var bank = (result && result.error) ? null : result;
     if (bank && bank.questions && bank.questions.length === 100) {
       window.QIYAS_BANK = bank;  // فك التشفير نجح — فعّل التطبيق
       document.getElementById('lockOverlay').style.display='none';
@@ -74,7 +75,10 @@
       if (window.__APP_READY) window.__APP_READY();
       return true;
     }
-    document.getElementById('unlockMsg').style.display='block';
+    var msg = document.getElementById('unlockMsg');
+    if (result && result.error) { msg.textContent = result.error; }
+    else { msg.textContent = 'كود غير صحيح. تحقق من إيميل الشراء.'; }
+    msg.style.display='block';
     return false;
   }
   document.getElementById('unlockBtn').addEventListener('click', check);
