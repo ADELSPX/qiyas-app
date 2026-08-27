@@ -7,6 +7,21 @@ let cursor = 0, answers = {}, startedAt = 0, timer = null, elapsed = {};
 const $ = id => document.getElementById(id);
 const toArabic = n => String(n).replace(/[0-9]/g, d => "٠١٢٣٤٥٦٧٨٩"[d]);
 
+/* وضع التجربة المجانية: إذا ما فيه بنك كامل، استخدم أسئلة التشخيص المجانية */
+function ensureBank(){
+  if (!window.QIYAS_BANK || !window.QIYAS_BANK.questions){
+    var trial = window.QIYAS_TRIAL_UNLOCK ? window.QIYAS_TRIAL_UNLOCK() : null;
+    if (trial && trial.questions){
+      window.QIYAS_BANK = trial;
+      window.__TRIAL_MODE__ = true;
+      bank = trial.questions;
+      byId = Object.fromEntries(bank.map(q => [q.id, q]));
+      questions = window.DIAGNOSTIC_IDS.map(id => byId[id]);
+    }
+  }
+}
+ensureBank();
+
 function start() { $("landing").classList.add("hidden"); $("diagnostic").classList.add("active"); $("quizView").classList.remove("hidden"); $("resultView").classList.remove("active"); cursor=0; answers={}; elapsed={}; startedAt=Date.now(); if (timer) clearInterval(timer); timer=setInterval(renderTimer,1000); renderQuestion(); }
 function exit() { clearInterval(timer); $("diagnostic").classList.remove("active"); $("landing").classList.remove("hidden"); window.scrollTo({top:0,behavior:"smooth"}); }
 function renderTimer(){ const s=Math.floor((Date.now()-startedAt)/1000); $("timer").textContent=`${toArabic(Math.floor(s/60).toString().padStart(2,"0"))}:${toArabic((s%60).toString().padStart(2,"0"))}`; }

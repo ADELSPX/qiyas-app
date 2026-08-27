@@ -46,16 +46,18 @@
     <footer class="footer"><div class="wrap">© ٢٠٢٦ · منتج تدريبي مستقل · لا يستخدم أسئلة مسرّبة أو محتوى غير مصرح به.</div></footer>
   </main>
   <section id="diagnostic" class="quiz-area"><div class="wrap"><div id="quizView"><div class="quiz-top"><button id="exitBtn" class="secondary" style="color:#d6e4ee">إنهاء الجلسة</button><div class="progress"><i id="progressFill" style="width:0%"></i></div><span id="counter">١ / ١٥</span></div><article class="quiz-card"><div class="q-meta"><span id="qTopic"></span><span id="timer">٠٠:٠٠</span></div><p id="passage" class="passage hidden"></p><h2 id="question" class="question"></h2><div id="options" class="options"></div><div class="quiz-actions"><button id="prevBtn" class="secondary">السابق</button><button id="nextBtn" class="primary">التالي ←</button></div></article></div><div id="resultView" class="result"><button id="restartBtn" class="secondary" style="color:#d6e4ee">إعادة التشخيص</button><article class="result-card"><p class="tag" style="color:#0f7e74">تقريرك التدريبي</p><h2 id="resultTitle"></h2><p id="resultNote"></p><div id="metrics" class="metric"></div></article><article class="result-card"><h3>تقرير الضعف حسب الموضوع</h3><div id="topics"></div></article><article class="result-card"><h3>ملف المتعلم</h3><div id="profile"></div></article><article class="result-card"><h3>خطة مذاكرة شخصية — ٧ أيام</h3><div id="plan" class="plan"></div></article><article class="result-card" style="border:2px solid #d4a948;background:linear-gradient(135deg,#0c2139,#133352)"><h3 style="color:#d4a948">خطوتك التالية ←</h3><p style="color:#eaf2ff;font-size:16px;margin:10px 0 14px">التشخيص السريع هذا عرّفك على عيّنة من قصورك. <b>النسخة الكاملة</b> تغطي <b>كل جوانب القصور</b> ببنك 100 سؤال تدريبي، تحليل أعمق لكل موضوع، وخطة مذاكرة مفصّلة ٧ أيام مصممة على نتيجتك — مع دليل PDF كامل.</p><a href="https://payhip.com/b/D9Gxi" style="display:inline-block;background:#d4a948;color:#102239;font:800 16px 'Noto Kufi Arabic',sans-serif;padding:14px 28px;border-radius:12px;text-decoration:none">أكمل التشخيص الكامل — $7 ←</a><p style="color:#8fa6b8;font-size:12px;margin:12px 0 0">الدفع عبر Payhip ببطاقتك — يصلك الكود فوراً ويرتبط بجهازك.</p></article></div></div></section>
-  <script src="qiyas_bank_encrypted.js"></script><script src="qiyas_unlock.js"></script><script src="app.js"></script>
+  <script src="qiyas_bank_encrypted.js"></script><script src="qiyas_trial.js"></script><script src="qiyas_unlock.js"></script><script src="app.js"></script>
 <!-- ===== قفل التفعيل ===== -->
 <div id="lockOverlay" style="position:fixed;top:0;left:0;right:0;bottom:0;background:#102239;z-index:99999;display:flex;align-items:center;justify-content:center;flex-direction:column;color:#fff;font-family:'Noto Kufi Arabic',sans-serif;text-align:center;padding:20px">
   <div style="max-width:420px;width:100%">
     <h2 style="font-size:26px;margin:0 0 8px">محلل <span style="color:#65e6c6">القدرات</span> الذكي</h2>
-    <p style="color:#c8d6e6;font-size:15px;margin:0 0 24px">أدخل كود التفعيل الذي وصلتك بعد الدفع</p>
+    <p style="color:#c8d6e6;font-size:15px;margin:0 0 8px">جرّب التشخيص المجاني أولاً — ١٥ سؤالاً ويرسم لك خطة الأسبوع.</p>
+    <button id="trialBtn" style="width:100%;padding:16px;font-size:17px;background:#d4a948;color:#102239;border:0;border-radius:8px;font-weight:800;cursor:pointer;margin-bottom:18px">ابدأ التشخيص المجاني ←</button>
+    <div style="display:flex;align-items:center;gap:10px;color:#71839a;font-size:12px;margin:0 0 14px"><span style="flex:1;height:1px;background:#223a55"></span>أو إذا عندك كود<span style="flex:1;height:1px;background:#223a55"></span></div>
     <input id="unlockInput" type="text" placeholder="QIYAS-XXXX-XXXX" style="width:100%;padding:14px 16px;font-size:18px;border:2px solid #65e6c6;border-radius:8px;background:#0b192a;color:#fff;text-align:center;letter-spacing:2px;margin-bottom:14px" />
-    <button id="unlockBtn" style="width:100%;padding:14px;font-size:16px;background:#65e6c6;color:#102239;border:0;border-radius:8px;font-weight:800;cursor:pointer">تفعيل التطبيق ←</button>
+    <button id="unlockBtn" style="width:100%;padding:14px;font-size:16px;background:#65e6c6;color:#102239;border:0;border-radius:8px;font-weight:800;cursor:pointer">تفعيل النسخة الكاملة ←</button>
     <p id="unlockMsg" style="color:#ff6b6b;font-size:14px;margin:12px 0 0;display:none">كود غير صحيح. تحقق من إيميل الشراء.</p>
-    <p style="color:#71839a;font-size:12px;margin-top:28px">للشراء: payhip.com — بعد الدفع يصلك الكود فوراً على إيميلك</p>
+    <p style="color:#71839a;font-size:12px;margin-top:28px">للشراء: payhip.com/b/D9Gxi — بعد الدفع يصلك الكود فوراً على إيميلك</p>
   </div>
 </div>
 <script>
@@ -83,6 +85,21 @@
   }
   document.getElementById('unlockBtn').addEventListener('click', check);
   document.getElementById('unlockInput').addEventListener('keydown', function(e){ if(e.key==='Enter') check(); });
+  /* زر التشخيص المجاني — يفتح مباشرة بدون كود */
+  function startTrial(){
+    if (!window.QIYAS_BANK || !window.QIYAS_BANK.questions){
+      var trial = window.QIYAS_TRIAL_UNLOCK ? window.QIYAS_TRIAL_UNLOCK() : null;
+      if (trial && trial.questions){
+        window.QIYAS_BANK = trial;
+        window.__TRIAL_MODE__ = true;
+      }
+    }
+    document.getElementById('lockOverlay').style.display='none';
+    if (window.__APP_READY) window.__APP_READY();
+    if (window.start) window.start();
+  }
+  var tb = document.getElementById('trialBtn');
+  if (tb) tb.addEventListener('click', startTrial);
   // keep the start button hidden until unlocked
   var ov = document.getElementById('lockOverlay');
   var obs = new MutationObserver(function(){ if(ov.style.display==='none'){} });
